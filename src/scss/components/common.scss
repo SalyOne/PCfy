@@ -14,6 +14,10 @@
   width: 40%;
   max-width: 781px ;
   margin: 0 auto;
+  @include ind.mq(tablet-medium){
+    width: 90%;
+    max-width: unset;
+  }
 }
 .header-solo{
   text-align: center;
@@ -26,6 +30,20 @@
     padding-bottom: 123px;
     img{
       width: 100%;
+    }
+    &.mobile{
+      display: none;
+    }
+    @include ind.mq(tablet-medium){
+
+      &.desktop{
+        display: none;
+      }
+      &.mobile{
+        display: block;
+        width: 80%;
+        margin: 0 auto;
+      }
     }
   }
 }
@@ -46,6 +64,10 @@
   text-decoration: none;
   transition: 0.3s;
   min-width: 60%;
+  @include ind.mq(tablet-medium){
+
+    min-width: 100%;
+  }
 
   &:hover{
     background-color: ind.$blue-med;
