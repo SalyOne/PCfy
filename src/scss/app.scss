@@ -1,1 +1,3 @@
-@use "components/common";
+@forward "components/common";
+@forward "components/header";
+@forward "components/data-list";

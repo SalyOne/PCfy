@@ -1,0 +1,86 @@
+@use "../helpers/index" as ind;
+.data-list-container{
+  width: 100%;
+
+  display:flex;
+  flex-flow:row wrap;
+  justify-content: space-between;
+
+  .list-item{
+
+    border: 1px solid ind.$blue-300 ;
+    border-radius: 20px;
+    background-color: ind.$blue-light;
+
+    padding: 15px;
+    margin: 15px 0;
+
+    display: flex;
+    flex:0 0 calc(50% - 10px);
+
+    height: 205px;
+    width: 50%;
+
+    gap: 25px;
+    &>div{
+      flex: 1 1 0;
+    }
+
+    .image-container{
+      border-radius: 10px;
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      img{
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+      @include ind.mq(tablet-medium){
+        height: unset;
+      }
+    }
+    .info-side{
+      padding: 25px 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      .person-name{
+        color: black;
+        padding-bottom: 15px;
+        //font
+
+      }
+      .laptop-name{
+        margin-bottom: auto;
+        text-transform: capitalize;
+
+        // font
+      }
+      .see-more{
+        color: ind.$blue-700;
+        // font
+
+      }
+    }
+
+    @include ind.mq(tablet-medium){
+      flex: 0 0 100%;
+      width: 100%;
+      height: 120px;
+      padding: 5px;
+      gap: 15px;
+      .info-side{
+        padding: 10px;
+        .person-name{
+          padding-bottom: 10px;
+        }
+      }
+    }
+  }
+
+  @include ind.mq(tablet-medium){
+    flex-flow: column nowrap;
+  }
+}

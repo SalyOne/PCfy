@@ -1,0 +1,48 @@
+@use "../helpers/index" as ind;
+
+.header-solo{
+  text-align: center;
+  padding: 79px 0  85px 0;
+}
+.header-with-title{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  padding: 79px 0;
+
+  .arrow-back{
+    margin-left: 70px;
+    background-color: ind.$gray-arrow-back;
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    svg{
+      transition: 0.3s;
+    }
+    &:hover{
+      svg{
+        transform: translateX(-5px);
+      }
+    }
+
+    @include ind.mq(tablet-medium){
+      margin-left: 20px;
+      height: unset;
+      width: unset;
+      background-color: transparent;
+    }
+  }
+  .title{
+   margin: auto;
+    color: black;
+    text-transform: uppercase;
+    //font
+
+  }
+  @include ind.mq(tablet-medium){
+    padding: 25px 0 ;
+  }
+}
