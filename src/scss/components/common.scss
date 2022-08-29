@@ -1,0 +1,56 @@
+@use "../helpers/index" as ind;
+
+.container{
+  width: 63%;
+  max-width: 1225px ;
+  margin: 0 auto;
+}
+.container-m{
+  width: 61%;
+  max-width: 1180px ;
+  margin: 0 auto;
+}
+.container-s{
+  width: 40%;
+  max-width: 781px ;
+  margin: 0 auto;
+}
+.header-solo{
+  text-align: center;
+  padding: 85px 0;
+}
+.page-main{
+  .svg-container{
+    position: relative;
+    width: 100%;
+    padding-bottom: 123px;
+    img{
+      width: 100%;
+    }
+  }
+}
+.buttons-container{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.button{
+  padding: 18px 60px;
+  border-radius: 8px;
+  background-color: ind.$blue;
+  text-transform: uppercase;
+  color: ind.$white;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s;
+  min-width: 60%;
+
+  &:hover{
+    background-color: ind.$blue-med;
+  }
+  &:focus{
+    background-color: ind.$blue-dark;
+  }
+}
