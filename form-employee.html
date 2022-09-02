@@ -21,46 +21,46 @@
 </header>
 <main class="container">
     <div class="form-container">
-        <form action="" method="get" class="form-example">
-            <div class="input-row">
-                <div class="input-container">
-                    <label for="name">სახელი </label>
-                    <input type="text" name="name" id="name" required>
+        <form action="" method="get" id="main-form" class="form-example">
+            <div class="form-row">
+                <div class="input-wrapper">
+                    <label class="label" for="name">სახელი</label>
+                    <input class="input-field" type="text" name="name" id="name" placeholder="გრიშა" required>
                     <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
                 </div>
-                <div class="input-container">
-                    <label for="lastName">გვვარი </label>
-                    <input type="text" name="name" id="lastName" required>
+                <div class="input-wrapper">
+                    <label class="label" for="lastName">გვარი</label>
+                    <input class="input-field" type="text" name="name" id="lastName" placeholder="გრიშაშვილი" required>
                     <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
                 </div>
             </div>
             <div class="select-container">
-                <label for="team"></label>
+                <label class="label" for="team"></label>
                 <select name="team" id="team">
                     <option value="one">one</option>
                     <option value="two">two</option>
                 </select>
             </div>
             <div class="select-container">
-                <label for="position" ></label>
+                <label class="label" for="position"></label>
                 <select name="position" id="position">
                     <option value="one">one</option>
                     <option value="two">two</option>
                 </select>
             </div>
 
-            <div class="input-container">
-                <label for="email">სახელი </label>
-                <input type="email" name="name" id="email" required>
-                <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+            <div class="input-wrapper">
+                <label class="label" for="email">მეილი </label>
+                <input class="input-field" type="email" name="name"  id="email" placeholder="sadasd" >
+                <span class="hint">უნდა მთავრდებოდეს @redberry.ge-ით</span>
             </div>
-            <div class="input-container">
-                <label for="phone">სახელი </label>
-                <input type="tel" name="name" id="phone" required>
-                <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+            <div class="input-wrapper">
+                <label class="label" for="phone">ტელეფონის ნომერი </label>
+                <input class="input-field" type="tel" name="name" id="phone" placeholder="sadasd" required>
+                <span class="hint">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
             </div>
 
-            <button type="submit" class="button">შემდეგი</button>
+            <button type="submit" class="button form-button" id="form-button">შემდეგი</button>
         </form>
     </div>
 <!--    <form action="" class="apply-form">-->
