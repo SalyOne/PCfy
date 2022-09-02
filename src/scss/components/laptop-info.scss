@@ -14,7 +14,6 @@
       padding-top: 0;
       .info-list-container{
         padding-top: 40px;
-
       }
     }
     &:last-child{
@@ -45,14 +44,21 @@
           display: inline-block;
           min-width: 160px;
           padding-right: 10px;
-          //font
 
+
+          font-family: ind.$main ;
+          font-size: 22px;
+          line-height: 25px;
+          font-variant-caps: all-small-caps ;
+          font-weight: bold;
         }
         .info-value{
           color: ind.$black-400;
-          //font-size: 18px;
 
-          //font
+          font-family: ind.$main ;
+          font-size: 22px;
+          line-height: 25px;
+          font-variant-caps: all-small-caps ;
         }
       }
     }
@@ -60,8 +66,25 @@
     @include ind.mq(tablet-medium){
       flex-direction: column;
       gap: 0;
+      padding-bottom: 15px;
+      padding-top: 15px;
+      &:first-child{
+        padding-top: 0;
+        .info-list-container{
+          padding-top: 10px;
+        }
+      }
       &>div{
         flex: unset;
+      }
+      .info-list-container{
+        .info-item{
+          .info-value,
+          .info-name{
+            font-size: 14px;
+
+          }
+        }
       }
       .image-container{
         width: 100%;

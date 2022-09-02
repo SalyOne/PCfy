@@ -66,17 +66,24 @@
   gap: 25px;
 }
 .button{
-  padding: 18px 60px;
+  padding: 0 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
   background-color: ind.$blue;
-  text-transform: uppercase;
-  color: ind.$white;
   text-align: center;
   text-decoration: none;
   transition: 0.3s;
   min-width: 60%;
 
-  //font
+  font-family: ind.$main;
+  font-size: 20px;
+  font-variant-caps: all-small-caps;
+  text-transform: uppercase;
+  color: ind.$white;
+
 
   @include ind.mq(tablet-medium){
 

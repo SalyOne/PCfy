@@ -8,7 +8,7 @@
   width: 100%;
   display: flex;
   justify-content: flex-start;
-  padding: 79px 0;
+  padding: 79px 0 40px 0;
 
   .arrow-back{
     margin-left: 70px;
@@ -39,8 +39,10 @@
    margin: auto;
     color: black;
     text-transform: uppercase;
-    //font
 
+    font-family: ind.$bold ;
+    font-size: 34px;
+    font-variant-caps: all-small-caps ;
   }
 
   .pagination{
@@ -52,7 +54,8 @@
 
     color: black;
     text-transform: uppercase;
-    //font
+    font-family: ind.$bold ;
+    font-size: 20px;
 
     li{
       padding: 0 10px;
