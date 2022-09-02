@@ -42,6 +42,38 @@
     //font
 
   }
+
+  .pagination{
+    list-style-type: none;
+    margin: auto;
+
+    display: flex;
+
+
+    color: black;
+    text-transform: uppercase;
+    //font
+
+    li{
+      padding: 0 10px;
+      &.active{
+        position: relative;
+        text-align: center;
+        &:after{
+          content: "";
+          width: 80%;
+          height: 2px;
+          text-align: center;
+          background-color: black;
+          display: block;
+          position: absolute;
+          left: 50%;
+
+          transform: translate(-50% ,5px);
+        }
+      }
+    }
+  }
   @include ind.mq(tablet-medium){
     padding: 25px 0 ;
   }

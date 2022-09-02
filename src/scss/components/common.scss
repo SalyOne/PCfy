@@ -1,5 +1,7 @@
 @use "../helpers/index" as ind;
-
+.gray{
+  background-color: ind.$white-back;
+}
 .container{
   width: 63%;
   max-width: 1225px ;
@@ -22,6 +24,14 @@
   @include ind.mq(tablet-medium){
     width: 90%;
     max-width: unset;
+  }
+}
+.main-footer{
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 45px;
+  img{
+    width: 85px;
   }
 }
 .page-main{

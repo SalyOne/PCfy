@@ -1,0 +1,163 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PCfy</title>
+    <link rel="stylesheet" href="assets/dist/fonts.css">
+    <link rel="stylesheet" href="assets/dist/app.css">
+</head>
+<body class="gray">
+<header class="header-with-title">
+    <a href="index.html" class="arrow-back">
+        <svg width="10" height="16" viewBox="0 0 10 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.85769 0.352185C9.0832 0.577756 9.20988 0.883656 9.20988 1.20262C9.20988 1.52157 9.0832 1.82747 8.85769 2.05305L2.90348 8.00726L8.85769 13.9615C9.0768 14.1883 9.19805 14.4922 9.19531 14.8076C9.19257 15.123 9.06606 15.4247 8.84304 15.6477C8.62002 15.8707 8.31832 15.9972 8.00293 16C7.68754 16.0027 7.3837 15.8815 7.15683 15.6623L0.352185 8.85769C0.126681 8.63212 0 8.32622 0 8.00726C0 7.6883 0.126681 7.3824 0.352185 7.15683L7.15683 0.352185C7.3824 0.126681 7.6883 0 8.00726 0C8.32622 0 8.63212 0.126681 8.85769 0.352185Z" fill="#2E2E2E"/>
+        </svg>
+    </a>
+    <ul class="pagination">
+        <li class="active">თანამშრომლის ინფო</li>
+        <li >ლეპტოპის მახასიათებელი</li>
+    </ul>
+</header>
+<main class="container">
+    <div class="form-container">
+        <form action="" method="get" class="form-example">
+            <div class="input-row">
+                <div class="input-container">
+                    <label for="name">სახელი </label>
+                    <input type="text" name="name" id="name" required>
+                    <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                </div>
+                <div class="input-container">
+                    <label for="lastName">გვვარი </label>
+                    <input type="text" name="name" id="lastName" required>
+                    <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                </div>
+            </div>
+            <div class="select-container">
+                <label for="team"></label>
+                <select name="team" id="team">
+                    <option value="one">one</option>
+                    <option value="two">two</option>
+                </select>
+            </div>
+            <div class="select-container">
+                <label for="position" ></label>
+                <select name="position" id="position">
+                    <option value="one">one</option>
+                    <option value="two">two</option>
+                </select>
+            </div>
+
+            <div class="input-container">
+                <label for="email">სახელი </label>
+                <input type="email" name="name" id="email" required>
+                <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+            </div>
+            <div class="input-container">
+                <label for="phone">სახელი </label>
+                <input type="tel" name="name" id="phone" required>
+                <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+            </div>
+
+            <button type="submit" class="button">შემდეგი</button>
+        </form>
+    </div>
+<!--    <form action="" class="apply-form">-->
+<!--        <div class="input-flex">-->
+<!--            <div class="input-field-wrapper">-->
+<!--                <input type="text" class="input-field" id="name" placeholder=" ">-->
+<!--                <label class="floating-label" for="name">Full Name</label>-->
+<!--            </div>-->
+
+<!--            <div class="input-field-wrapper">-->
+<!--                <input type="number" class="input-field" id="phone" placeholder=" "   >-->
+<!--                <label class="floating-label" for="name">Phone</label>-->
+<!--                <div class="input-message input-fail">-->
+<!--                    <span>The field is required</span>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="select-container">-->
+<!--            <label for="country-select-bottom"></label>-->
+<!--            <select name="country" id="country-select-bottom">-->
+<!--                <option value="" disabled selected>Country</option>-->
+<!--                <option value="Georgia">Georgia</option>-->
+<!--                <option value="USA">USA</option>-->
+<!--                <option value="Canada">Canada</option>-->
+<!--                <option value="Germany">Germany</option>-->
+<!--            </select>-->
+<!--        </div>-->
+
+<!--        <div class="input-flex">-->
+<!--            <div class="select-container">-->
+<!--                <label for="job-location"></label>-->
+<!--                <select name="country" id="job-location">-->
+<!--                    <option value="" disabled selected>Location</option>-->
+<!--                    <option value="Georgia">Georgia</option>-->
+<!--                    <option value="USA">USA</option>-->
+<!--                    <option value="Canada">Canada</option>-->
+<!--                    <option value="Germany">Germany</option>-->
+<!--                </select>-->
+<!--            </div>-->
+
+<!--            <div class="select-container">-->
+<!--                <label for="job-position"></label>-->
+<!--                <select name="country" id="job-position">-->
+<!--                    <option value="" disabled selected>Job Position</option>-->
+<!--                    <option value="Job Position">Job Position</option>-->
+<!--                </select>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="input-group input-field-wrapper">-->
+<!--            <input type="file" name="file-7[]" id="file-7" class="inputfile inputfile-6" data-multiple-caption="{count} files selected" multiple />-->
+<!--            <label for="file-7" class="custom-control-label">-->
+<!--                <span class="upload-name">-->
+<!--                    Choose a file&hellip;</span>-->
+<!--                <span class="upload-button">-->
+<!--                    <svg  xmlns="http://www.w3.org/2000/svg" fill="white" width="24.705" height="27.156" viewBox="0 0 24.705 27.156">-->
+<!--                        <path  d="M18.508,11.756V6.616a.6.6,0,0,0-.164-.391L12.582.175A.574.574,0,0,0,12.169,0H3.034A3.044,3.044,0,0,0,0,3.062V20.336a3.024,3.024,0,0,0,3.034,3.039h7.211a7.783,7.783,0,1,0,8.263-11.62ZM12.735,1.987,16.6,6.056H14.093a1.367,1.367,0,0,1-1.358-1.364Zm-9.7,20.256a1.9,1.9,0,0,1-1.9-1.907V3.062a1.912,1.912,0,0,1,1.9-1.93H11.6v3.56a2.5,2.5,0,0,0,2.49,2.5h3.283v4.42c-.17-.006-.306-.023-.453-.023a7.9,7.9,0,0,0-5.162,1.947H4.573a.566.566,0,1,0,0,1.132h6.135a9.005,9.005,0,0,0-1,1.755H4.573a.566.566,0,0,0,0,1.132H9.344a7.767,7.767,0,0,0,.34,4.7H3.034ZM16.917,26.03a6.65,6.65,0,1,1,6.65-6.65A6.657,6.657,0,0,1,16.917,26.03Zm0,0" transform="translate(0 0)"/>-->
+<!--                        <path  d="M76.117,202.816H81.85a.566.566,0,1,0,0-1.132H76.117a.566.566,0,1,0,0,1.132Zm0,0" transform="translate(-71.544 -190.987)"/>-->
+<!--                        <path  d="M249.855,283.392a.562.562,0,0,0-.826,0l-3.317,3.56a.564.564,0,0,0,.028.8.578.578,0,0,0,.809-.028l2.343-2.507V291.4a.566.566,0,1,0,1.132,0v-6.181l2.326,2.507a.565.565,0,0,0,.826-.77Zm0,0" transform="translate(-232.536 -268.19)"/>-->
+<!--                    </svg>-->
+<!--                    Choose a file&hellip;-->
+<!--                </span>-->
+<!--            </label>-->
+<!--            <div class="input-message input-fail">-->
+<!--                <span>The field is required</span>-->
+<!--            </div>-->
+
+<!--        </div>-->
+
+<!--        <div class="textarea-wrapper">-->
+<!--            <textarea name="textarea" id="textarea-text" placeholder="asdasd"></textarea>-->
+<!--        </div>-->
+
+
+<!--        <div class="input-field-wrapper custom-checkbox">-->
+<!--            <input type="checkbox" name="agreement" class="styled-checkbox" id="customCheckDisabled">-->
+<!--            <label for="customCheckDisabled">I agree to the <a href="#">terms and conditions</a></label>-->
+<!--            <div class="input-message input-fail">-->
+<!--                <span>The field is required</span>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="apply-button">-->
+<!--            <a href="#" class="button transparent-back-fixed-color">apply now</a>-->
+
+<!--            <div class="success-message">-->
+<!--                <span>Thank you for your message. It has been sent.</span>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </form>-->
+</main>
+<footer class="main-footer">
+    <img src="assets/images/logoS.svg" alt="Redberry logo footer">
+</footer>
+
+<script src="assets/dist/app.js"></script>
+</body>
+</html>
