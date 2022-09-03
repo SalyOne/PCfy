@@ -1,49 +1,80 @@
 
+
+(function () {
 //validate for email
 const employeeForm = document.getElementById("main-form");
 const formButton = document.getElementById("form-button");
 const formEmail = document.getElementById("email");
 const formPhone = document.getElementById("phone");
+const textFields= document.querySelectorAll("input[type=text]");
 
-function ValidateEmail(inputText) {
-    let mailformat = /^\w+([\.-]?\w+)*@(redberry.ge)+$/;
-    if(inputText.value.match(mailformat))
+// console.log(textFields)
+function ValidateForm(inputText) {
+    let  format, enoughtLength;
+    if(inputText.getAttribute("type") === "tel"){
+        // format = /^(\+?995)?(79\d{7}|5\d{8})*$/g; // without whiiitespace
+        format = /1?(\+?995)[\s]?\d{3}[\s]?\d{2}[\s]?\d{2}[\s]?\d{2}/; // with whitespace
+        enoughtLength=true;
+    }
+    if(inputText.getAttribute("type") === "email"){
+        format =  /^\w+([\.-]?\w+)*@(redberry.ge)+$/;
+        enoughtLength=true;
+    }
+
+    if(inputText.getAttribute("type") === "text"){
+        format =  /[\u10A0-\u10FF]/g;
+        // console.log("aaaaaaa")
+        // console.log(inputText.value.length)
+        enoughtLength = inputText.value.length >= 2;
+    }
+    // console.log(format)
+    // console.log(inputText.value.length)
+    // let mailformat = /^\w+([\.-]?\w+)*@(redberry.ge)+$/;
+
+    if(inputText.value.match(format) && enoughtLength)
     {
-        if(formEmail.classList.contains("invalid")){
-            formEmail.classList.remove("invalid");
+        if(inputText.parentElement.classList.contains("invalid")){
+            inputText.parentElement.classList.remove("invalid");
         }
         return true;
     }
     else
     {
-        if(!formEmail.classList.contains("invalid")){
-            formEmail.classList.add("invalid");
+        if(!inputText.parentElement.classList.contains("invalid")){
+            inputText.parentElement.classList.add("invalid");
         }
         return false;
     }
 }
-function ValidatePhone(inputText) {
-    let phoneFormat= /^(\+?995)?(79\d{7}|5\d{8})$/;
-
-    if(inputText.value.match(phoneFormat)) {
 
 
-        //add thiis class to paarent div .input-wrapper
-        if(formPhone.classList.contains("invalid")){
-            formPhone.classList.remove("invalid");
-        }
-        return true;
-    }
-    else {
-        if(!formPhone.classList.contains("invalid")){
-            formPhone.classList.add("invalid");
-        }
-        return false;
-    }
-}
-employeeForm.addEventListener('submit', ()=>{
+// function ValidatePhone(inputText) {
+//     console.log()
+//     let phoneFormat= /^(\+?995)?(79\d{7}|5\d{8})$/;
+//
+//     if(inputText.value.match(phoneFormat)) {
+//
+//         //add thiis class to paarent div .input-wrapper
+//         if(formPhone.parentElement.classList.contains("invalid")){
+//             formPhone.classList.remove("invalid");
+//         }
+//         return true;
+//     }
+//     else {
+//         if(!formPhone.parentElement.classList.contains("invalid")){
+//             formPhone.parentElement.classList.add("invalid");
+//         }
+//         return false;
+//     }
+// }
+formButton.addEventListener('click', ()=>{
     event.preventDefault();
-    ValidateEmail(formEmail);
-    ValidatePhone(formPhone);
-    console.log(formPhone.valueOf());
+    textFields.forEach((each)=>{
+        ValidateForm(each);
+    })
+    ValidateForm(formEmail);
+    ValidateForm(formPhone);
+    // ValidatePhone(formPhone);
+
 })
+})();

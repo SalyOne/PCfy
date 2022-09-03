@@ -22,45 +22,132 @@
 <main class="container">
     <div class="form-container">
         <form action="" method="get" id="main-form" class="form-example">
-            <div class="form-row">
+            <div class="first-page">
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <label class="label" for="name">სახელი</label>
+                        <input class="input-field" type="text" name="name" id="name" placeholder="გრიშა" required>
+                        <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                    </div>
+                    <div class="input-wrapper">
+                        <label class="label" for="lastName">გვარი</label>
+                        <input class="input-field" type="text" name="name" id="lastName" placeholder="გრიშაშვილი" required>
+                        <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                    </div>
+                </div>
+                <div class="select-container">
+                    <label class="label" for="team"></label>
+                    <select name="team" id="team" required>
+                        <option value="one">თიმი</option>
+                    </select>
+                </div>
+                <div class="select-container">
+                    <label class="label" for="position"></label>
+                    <select name="position" id="position" class="disabled" required>
+                        <option value="one">positions</option>
+                    </select>
+                </div>
+
                 <div class="input-wrapper">
-                    <label class="label" for="name">სახელი</label>
-                    <input class="input-field" type="text" name="name" id="name" placeholder="გრიშა" required>
-                    <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                    <label class="label" for="email">მეილი </label>
+                    <input class="input-field" type="email" name="name" required id="email" placeholder="example@redberry.ge" >
+                    <span class="hint">უნდა მთავრდებოდეს @redberry.ge-ით</span>
                 </div>
                 <div class="input-wrapper">
-                    <label class="label" for="lastName">გვარი</label>
-                    <input class="input-field" type="text" name="name" id="lastName" placeholder="გრიშაშვილი" required>
-                    <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                    <label class="label" for="phone">ტელეფონის ნომერი </label>
+                    <input class="input-field" type="tel" name="name" id="phone" placeholder="+995 598 00 07 01" required>
+                    <span class="hint">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს +995557700028  +995 598 00 07 01</span>
                 </div>
-            </div>
-            <div class="select-container">
-                <label class="label" for="team"></label>
-                <select name="team" id="team">
-                    <option value="one">one</option>
-                    <option value="two">two</option>
-                </select>
-            </div>
-            <div class="select-container">
-                <label class="label" for="position"></label>
-                <select name="position" id="position">
-                    <option value="one">one</option>
-                    <option value="two">two</option>
-                </select>
-            </div>
 
-            <div class="input-wrapper">
-                <label class="label" for="email">მეილი </label>
-                <input class="input-field" type="email" name="name"  id="email" placeholder="sadasd" >
-                <span class="hint">უნდა მთავრდებოდეს @redberry.ge-ით</span>
+                <button class="button form-button next-page" id="form-button">შემდეგი</button>
             </div>
-            <div class="input-wrapper">
-                <label class="label" for="phone">ტელეფონის ნომერი </label>
-                <input class="input-field" type="tel" name="name" id="phone" placeholder="sadasd" required>
-                <span class="hint">უნდა აკმაყოფილებდეს ქართული მობ-ნომრის ფორმატს</span>
-            </div>
+            <div class="second-page">
+                <div class="image-drop-container">
+                    <input type="text">
+                </div>
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <label class="label" for="laptop-name">ლეპტოპის სახელი</label>
+                        <input class="input-field" type="text" name="name" id="laptop-name" placeholder="HP" required>
+                        <span class="hint">ლათინური ასოები, ციფრები, !@#$%^&*()_+= </span>
+                    </div>
+                    <div class="select-container">
+                        <label class="label" for="laptop-brand"></label>
+                        <select name="team" id="laptop-brand" required>
+                            <option value="one">ლეპტოპის ბრენდი</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="line"></div>
+                <div class="form-row trio">
+                    <div class="select-container">
+                        <label class="label" for="cpu"></label>
+                        <select name="team" id="cpu" required>
+                            <option value="one">cpu</option>
+                        </select>
+                    </div>
+                    <div class="input-wrapper">
+                        <label class="label" for="cpu-core">CPU-ს ბირთვი</label>
+                        <input class="input-field" type="text" name="name" id="cpu-core" placeholder="144" required>
+                        <span class="hint">მხოლოდ ციფრები </span>
+                    </div>
+                    <div class="input-wrapper">
+                        <label class="label" for="cpu-stream">CPU-ს ნაკადი</label>
+                        <input class="input-field" type="text" name="name" id="cpu-stream" placeholder="365" required>
+                        <span class="hint">მხოლოდ ციფრები </span>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <label class="label" for="ram">ლეპტოპის RAM (GB)</label>
+                        <input class="input-field" type="text" name="name" id="ram" placeholder="166" required>
+                        <span class="hint">მხოლოდ ციფრები </span>
+                    </div>
+                    <div class="radio-container">
+                        <span class="label">მეხსიერების ტიპი</span>
+                        <label for="ssd" class="radio-control">
+                            <input type="radio" id="ssd" name="memory" value="ssd" class="radio">
+                            SSD
+                        </label>
+                        <label for="hdd" class="radio-control">
+                            <input type="radio" id="hdd" name="memory" value="hdd" class="radio">
+                            HDD
+                        </label>
+                    </div>
+                </div>
 
-            <button type="submit" class="button form-button" id="form-button">შემდეგი</button>
+                <div class="line"></div>
+
+                <div class="form-row">
+                    <div class="input-wrapper">
+                        <label class="label" for="date">შეძენის რიცხვი (არჩევითი)</label>
+                        <input class="input-field" type="text" name="name" id="date" placeholder="დდ / თთ / წწწწ" required>
+                        <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                    </div>
+                    <div class="input-wrapper">
+                        <label class="label" for="price">ლეპტოპის ფასი</label>
+                        <input class="input-field" type="text" name="name" id="price" placeholder="0000" required>
+                        <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                    </div>
+                </div>
+
+                <div class="radio-container">
+                    <span class="label">ლეპტოპის მდგომარეობა</span>
+                    <label for="new" class="radio-control">
+                        <input type="radio" id="new"  name="state" value="ssd" class="radio">
+                        ახალი
+                    </label>
+                    <label for="old" class="radio-control">
+                        <input type="radio" id="old" name="state" value="hdd" class="radio">
+                        მეორადი
+                    </label>
+                </div>
+                <div class="form-footer">
+                    <span class="back">უკან</span>
+                    <button class="button form-button next-page" id="form-button-submit">დამახსოვრება</button>
+                </div>
+
+            </div>
         </form>
     </div>
 <!--    <form action="" class="apply-form">-->
