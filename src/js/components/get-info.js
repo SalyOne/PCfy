@@ -38,9 +38,6 @@
         }
     })
 
-
-
-
     let team = document.getElementById("team")
     let position = document.getElementById("position")
     let teams = document.querySelectorAll("#team option")
@@ -70,27 +67,35 @@
         let positions = document.querySelectorAll("#position option");
 
             positions.forEach((eachPos)=>{
-                console.log(eachPos)
+                // console.log(eachPos)
                 eachPos.remove();
             })
-        // positions.forEach((eachPos)=>{
-        //     // console.log(eachPos)
-        //     if(eachPos.classList.contains("removeOption")){
-        //         eachPos.classList.remove("removeOption")
-        //     }
-        // })
-        // positions.forEach((eachPos)=>{
-        //     // console.log(eachPos.getAttribute("team-id"))
-        //     let posid=eachPos.getAttribute("team-id")
-        //         if(teamId !== posid){
-        //             eachPos.classList.add("removeOption");
-        //         }
-        //         else {
-        //             position.value= eachPos.getAttribute('value');
-        //         }
-        // })
+
     })
 
-
+    ajax("https://pcfy.redberryinternship.ge/api/cpus\n", function (res){
+        // console.log(res)
+        let parent = document.getElementById("cpu");
+        let data = JSON.parse(res);
+        // let a = {...data}
+        for (let item  of data.data){
+            let opt = document.createElement('option');
+            opt.setAttribute("value",item.id);
+            opt.innerHTML=item.name;
+            parent.appendChild(opt)
+        }
+    })
+        ajax("https://pcfy.redberryinternship.ge/api/brands\n", function (res){
+            // console.log(res)
+            let parent = document.getElementById("laptop-brand");
+            let data = JSON.parse(res);
+            // let a = {...data}
+            for (let item  of data.data){
+                let opt = document.createElement('option');
+                opt.setAttribute("value",item.id);
+                opt.innerHTML=item.name;
+                parent.appendChild(opt)
+            }
+        })
     })
     })()

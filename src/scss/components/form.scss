@@ -88,6 +88,7 @@
 }
 .select-container{
   margin: 30px 0;
+  border-radius: 8px;
   select {
     height: ind.$input-height;
     width: 100%;
@@ -110,6 +111,10 @@
       }
     }
   }
+
+  &.invalid{
+    border: 1px solid ind.$error;
+  }
 }
 .disabled{
   pointer-events: none;
@@ -118,8 +123,12 @@
 .removeOption{
   display: none;
 }
-.first-page{
+.first-page ,
+.second-page{
   display: none;
+  &.active{
+    display: block;
+  }
 }
 
 .radio-container{
@@ -201,9 +210,36 @@
   border-radius: 18px;
   border: 2px dashed ind.$blue-700;
   background-color: #F7F7F7;
+
+  position: relative;
+  img{
+    display: none;
+  }
+ &.dropped img{
+   display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+  }
   span{
     color: ind.$blue-700;
     font-size: 20px;
     font-family: ind.$main;
+    display: block;
+    margin-bottom: 40px;
+  }
+  .button{
+    width: 100px;
+    min-width: unset;
+    cursor: pointer;
+  }
+  #drop-zone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
   }
 }
