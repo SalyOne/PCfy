@@ -1,7 +1,10 @@
 
-
-    window.onload = function(){
-    let url = "https://pcfy.redberryinternship.ge/api/teams\n";
+(function () {
+    document.addEventListener("DOMContentLoaded", function() {
+        let container = document.querySelectorAll(".form-container");
+        if (container.length == 0) {
+            return;
+        }
     function ajax(url,callback){
         let xhr = new XMLHttpRequest();
         xhr.open('GET', url);
@@ -87,4 +90,7 @@
         //         }
         // })
     })
-}
+
+
+    })
+    })()

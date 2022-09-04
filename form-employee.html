@@ -21,7 +21,7 @@
 </header>
 <main class="container">
     <div class="form-container">
-        <form action="" method="get" id="main-form" class="form-example">
+        <form action="" method="get" id="main-form" class="form-example dropzone">
             <div class="first-page">
                 <div class="form-row">
                     <div class="input-wrapper">
@@ -62,9 +62,20 @@
                 <button class="button form-button next-page" id="form-button">შემდეგი</button>
             </div>
             <div class="second-page">
-                <div class="image-drop-container">
-                    <input type="text">
+                <div class="image-drop-container preview-image-container" id="drop-form">
+                    <span class="motionText">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</span>
+                    <div id="drop-zone">
+                        <img src="" alt="">
+                        <p>Drop file or click to upload</p>
+                        <a class="button" id="dropA"> ატვირთე</a>
+                        <input type="file" class="file" hidden>
+                    </div>
                 </div>
+
+                <div class="container">
+                    <input type="file" class="file" hidden>
+                </div>
+
                 <div class="form-row">
                     <div class="input-wrapper">
                         <label class="label" for="laptop-name">ლეპტოპის სახელი</label>
