@@ -15,14 +15,14 @@
         </svg>
     </a>
     <ul class="pagination">
-        <li class="active">თანამშრომლის ინფო</li>
-        <li >ლეპტოპის მახასიათებელი</li>
+        <li class="first active">თანამშრომლის ინფო</li>
+        <li class="second">ლეპტოპის მახასიათებელი</li>
     </ul>
 </header>
 <main class="container">
     <div class="form-container">
         <form action="post" method="get" id="main-form" class="form-example dropzone">
-            <div class="first-page ">
+            <div class="first-page active">
                 <div class="form-row">
                     <div class="input-wrapper">
                         <label class="label" for="name">სახელი</label>
@@ -61,14 +61,14 @@
 
                 <button class="button form-button next-page" id="form-button">შემდეგი</button>
             </div>
-            <div class="second-page active">
+            <div class="second-page ">
                 <div class="image-drop-container preview-image-container" id="drop-form">
                     <div id="drop-zone">
                         <img src="" alt="image">
                         <span class="motionText">ჩააგდე ან ატვირთე ლეპტოპის ფოტო</span>
                         <a class="button" id="dropA" > ატვირთე</a>
-                        <input type="file" class="file" id="file" hidden>
                     </div>
+                    <input type="file" class="file" id="file" hidden required>
                 </div>
                 <div class="form-row">
                     <div class="input-wrapper">
@@ -78,8 +78,8 @@
                     </div>
                     <div class="select-container">
                         <label class="label" for="laptop-brand"></label>
-                        <select name="team" id="laptop-brand" required>
-                            <option  selected disabled value="one">ლეპტოპის ბრენდი</option>
+                        <select name="brand" class="select-item" id="laptop-brand" required>
+                            <option  selected disabled value="-1">ლეპტოპის ბრენდი</option>
                         </select>
                     </div>
                 </div>
@@ -87,35 +87,35 @@
                 <div class="form-row trio">
                     <div class="select-container">
                         <label class="label" for="cpu"></label>
-                        <select name="cpu" id="cpu" required>
-                            <option disabled value="one">cpu</option>
+                        <select name="cpu" class="select-item" id="cpu" required>
+                            <option selected disabled value="-1">cpu</option>
                         </select>
                     </div>
                     <div class="input-wrapper">
                         <label class="label" for="cpu-core">CPU-ს ბირთვი</label>
-                        <input class="input-field" type="text" name="aaa" id="cpu-core" placeholder="144" required>
+                        <input class="input-field number" type="text" name="aaa" id="cpu-core" placeholder="144" required>
                         <span class="hint">მხოლოდ ციფრები </span>
                     </div>
                     <div class="input-wrapper">
                         <label class="label" for="cpu-stream">CPU-ს ნაკადი</label>
-                        <input class="input-field" type="text" name="name" id="cpu-stream" placeholder="365" required>
+                        <input class="input-field number" type="text" name="name" id="cpu-stream" placeholder="365" required>
                         <span class="hint">მხოლოდ ციფრები </span>
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="input-wrapper">
                         <label class="label" for="ram">ლეპტოპის RAM (GB)</label>
-                        <input class="input-field" type="text" name="name" id="ram" placeholder="166" required>
+                        <input class="input-field number"  type="text" name="name"  id="ram" placeholder="166" required>
                         <span class="hint">მხოლოდ ციფრები </span>
                     </div>
                     <div class="radio-container">
                         <span class="label">მეხსიერების ტიპი</span>
                         <label for="ssd" class="radio-control">
-                            <input type="radio" id="ssd" name="memory" value="ssd" class="radio">
+                            <input type="radio" id="ssd" name="memory" value="ssd" class="radio" required="required">
                             SSD
                         </label>
                         <label for="hdd" class="radio-control">
-                            <input type="radio" id="hdd" name="memory" value="hdd" class="radio">
+                            <input type="radio" id="hdd" name="memory" value="hdd" class="radio" required="required">
                             HDD
                         </label>
                     </div>
@@ -126,24 +126,23 @@
                 <div class="form-row">
                     <div class="input-wrapper">
                         <label class="label" for="date">შეძენის რიცხვი (არჩევითი)</label>
-                        <input class="input-field" type="text" name="name" id="date" placeholder="დდ / თთ / წწწწ" required>
-                        <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                        <input class="input-field" type="date" name="name" id="date" placeholder="დდ / თთ / წწწწ" >
                     </div>
                     <div class="input-wrapper">
                         <label class="label" for="price">ლეპტოპის ფასი</label>
-                        <input class="input-field" type="text" name="name" id="price" placeholder="0000" required>
-                        <span class="hint">მინიმუმ 2 სიმბოლო, ქართული ასოებით</span>
+                        <input class="input-field number" type="text" name="name" id="price" placeholder="0000" required>
+                        <span class="hint">მხოლოდ ციფრები</span>
                     </div>
                 </div>
 
                 <div class="radio-container">
                     <span class="label">ლეპტოპის მდგომარეობა</span>
                     <label for="new" class="radio-control">
-                        <input type="radio" id="new"  name="state" value="ssd" class="radio">
+                        <input type="radio" id="new"  name="state" value="ssd" class="radio" required="required">
                         ახალი
                     </label>
                     <label for="old" class="radio-control">
-                        <input type="radio" id="old" name="state" value="hdd" class="radio">
+                        <input type="radio" id="old" name="state" value="hdd" class="radio" >
                         მეორადი
                     </label>
                 </div>

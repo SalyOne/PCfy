@@ -17,11 +17,11 @@ file.addEventListener('change', function () {
 dragArea.addEventListener('dragover', (e) => {
     e.preventDefault();
     dragArea.classList.add('dropped')
-    text.innerHTML = 'Release to Upload file<br>OR'
+    text.innerHTML = 'ჩააგდე ან ატვირთე ლეპტოპის ფოტო'
 })
 dragArea.addEventListener('dragleave', () => {
     dragArea.classList.remove('dropped')
-    text.innerHTML = 'Drag & Drop<br>OR'
+    text.innerHTML = 'ჩააგდე და ატვირთე ლეპტოპის ფოტო'
 })
 
 dragArea.addEventListener('drop', (e) => {
