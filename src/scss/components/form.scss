@@ -4,17 +4,35 @@
   padding: 80px 120px;
   border-radius: 18px;
   background-color: ind.$white;
+
+  @include ind.mq(tablet-medium){
+    padding: 20px 10px;
+  }
 }
 .form-row{
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   &>div{
     flex: 0 0 calc(50% - 20px);
   }
   &.trio{
     &>div{
       flex: 0 0 calc(33% - 10px);
+    }
+  }
+
+  @include ind.mq(tablet-medium){
+    flex-direction: column;
+    &>div{
+      flex: unset;
+      width: 100%;
+    }
+    &.trio{
+      &>div{
+        flex: unset;
+        width: 100%;
+      }
     }
   }
 }
@@ -90,6 +108,15 @@
 .select-container{
   margin: 30px 0;
   border-radius: 8px;
+  label{
+    display: block;
+    min-height: 29px;
+
+    @include ind.mq(tablet-medium){
+      min-height: unset;
+
+    }
+  }
   select {
     height: ind.$input-height;
     width: 100%;
@@ -133,6 +160,7 @@
 }
 
 .radio-container{
+  margin-top: 29px;
   .label{
     display: block;
     font-family: ind.$bold;
@@ -186,6 +214,11 @@
     .label{
       color: ind.$error;
     }
+  }
+
+  @include ind.mq(tablet-medium){
+
+    margin-top: unset;
   }
 }
 .form-footer{
@@ -245,6 +278,7 @@
     font-family: ind.$main;
     display: block;
     margin-bottom: 40px;
+    text-align: center;
   }
   .button{
     width: 100px;
@@ -258,4 +292,21 @@
     justify-content: center;
 
   }
+}
+.each-laptop{
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+
+  &.active{
+    display: block;
+  }
+}
+
+@include ind.mq(tablet-medium){
+
 }

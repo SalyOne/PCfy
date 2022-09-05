@@ -6,6 +6,9 @@
   width: 63%;
   max-width: 1225px ;
   margin: 0 auto;
+  @include ind.mq(tablet-medium){
+  width: 95%;
+  }
 }
 .container-m{
   width: 61%;

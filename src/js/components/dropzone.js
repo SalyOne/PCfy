@@ -1,3 +1,11 @@
+
+(function () {
+    document.addEventListener("DOMContentLoaded", function() {
+        let container = document.querySelectorAll(".form-container");
+
+        if (container.length === 0) {
+            return;
+        }
 const dragArea = document.querySelector('.preview-image-container')
 const file = document.querySelector('#file')
 const text = document.querySelector('.motionText')
@@ -9,7 +17,7 @@ brouseBtn.addEventListener('click', () => {
     file.click()
 })
 file.addEventListener('change', function () {
-    console.log("aa")
+    // console.log("aa")
     myFiles = this.files[0]
     dragArea.classList.add('dropped')
     showfile();
@@ -47,3 +55,5 @@ function showfile() {
     }
 
 }
+    })
+})()

@@ -21,6 +21,10 @@
         const radioState = document.querySelectorAll('input[name="state"]');
         const radioMemory = document.querySelectorAll('input[name="memory"]');
         const imageCont = document.querySelector('.image-drop-container');
+        const team = document.getElementById('team');
+        const pos = document.getElementById('position');
+
+
 
         function ValidateForm(inputText) {
             let format, enoughtLength;
@@ -78,7 +82,7 @@
         function fileCheck(fl){
             if(fl.value != "") {
                 if (imageCont.classList.contains("invalid")) {
-                    fimageContove("invalid");
+                    imageCont.classList.remove("invalid");
                 }
             }
             else {
@@ -99,7 +103,6 @@
 
         })
         formButtonSubmit.addEventListener('click', (e) => {
-
             e.preventDefault()
             numberFields.forEach((each) => {
                 validateLaptopInfo(each);
@@ -135,22 +138,69 @@
                     }
                 }
             }
+
             fileCheck(file);
+
+
+            const name = document.querySelector('input[name="name"]').value;
+            const surname = document.querySelector('input[name="surname"]').value;
+            const teamId = team.options[team.selectedIndex].value;
+            const posId = pos.options[pos.selectedIndex].value;
+            const phone = document.querySelector('input[name="phone_number"]').value;
+            const email = document.getElementById('email');
+            const files = document.getElementById('file');
+            const laptop_name = document.getElementById('laptop-name');
+            const laptop_brand = document.getElementById('laptop-brand');
+            const cpu = document.getElementById('cpu');
+            const cpu_core = document.getElementById('cpu-core');
+            const cpu_stream = document.getElementById('cpu-stream');
+            const ram = document.getElementById('ram');
+            const date = document.getElementById('date');
+            const price = document.getElementById('price');
+            const memory = document.querySelector('input[name="memory"]:checked');
+            const state = document.querySelector('input[name="state"]:checked');
+
+            const token = "a30757c352d7599efa2c95edf064574e";
+
             let inv = document.querySelectorAll(".invalid");
             if (inv.length === 0) {
-                employeeForm.submit();
+                const aa=new FormData(employeeForm);
+                // console.log(...aa)
+
+                fetch('https://pcfy.redberryinternship.ge/api/laptop/create',{
+                    method:"POST",
+                    headers:{
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(
+                {
+                            "name": name,
+                            "surname": surname,
+                            "email": email,
+                            "team_id": teamId,
+                            "position_id ": posId,
+                            "phone_number ": phone,
+                            "token": token,
+                            "laptop_name":laptop_name,
+                            "laptop_image":files,
+                            "laptop_brand_id":laptop_brand,
+                            "laptop_cpu":cpu,
+                            "laptop_cpu_cores":cpu_core,
+                            "laptop_cpu_threads":cpu_stream,
+                            "laptop_ram":ram,
+                            "laptop_hard_drive_type":memory,
+                            "laptop_state":state,
+                            "laptop_purchase_date":date,
+                            "laptop_price ":price,
+
+                        }
+                    ),
+                })
+                    .then(res => res.json())
+                    .then(data=>console.log(data))
+                    .then(err => console.log(err))
             }
 
         })
-        //         formButton.addEventListener('click', (e) => {
-//             e.preventDefault();
-//             textFields.forEach((each) => {
-//                 ValidateForm(each);
-//             })
-//             ValidateForm(formEmail);
-//             ValidateForm(formPhone);
-//             ValidateForm(select);
-//
-//         })
     })
 })()

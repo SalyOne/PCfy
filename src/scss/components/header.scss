@@ -76,6 +76,11 @@
         }
       }
     }
+
+    @include ind.mq(tablet-medium){
+      font-size: 16px;
+
+    }
   }
   @include ind.mq(tablet-medium){
     padding: 25px 0 ;

@@ -22,7 +22,7 @@
             resolve("Done!");
         }, 5000);
     }).then(data => {
-        console.log(data); // "Done!"
+        // console.log(data); // "Done!"
     });
 
     ajax("https://pcfy.redberryinternship.ge/api/teams\n", function (res){
