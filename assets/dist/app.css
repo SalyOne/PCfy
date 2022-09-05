@@ -532,16 +532,8 @@ table {
 
 .select-container {
   margin: 30px 0;
+  margin-top: 59px;
   border-radius: 8px;
-}
-.select-container label {
-  display: block;
-  min-height: 29px;
-}
-@media only screen and (max-width: 991px) {
-  .select-container label {
-    min-height: unset;
-  }
 }
 .select-container select {
   height: 50px;
@@ -562,6 +554,11 @@ table {
 }
 .select-container select option:hover {
   background-color: red;
+}
+@media only screen and (max-width: 991px) {
+  .select-container {
+    margin-top: 20px;
+  }
 }
 .select-container.invalid {
   border: 1px solid #E52F2F;
