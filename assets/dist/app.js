@@ -120,12 +120,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
           var imageCont = document.createElement('div');
           imageCont.setAttribute('class', 'image-container');
-          itm.appendChild(imageCont); //image
-          // let img= document.createElement('img');
-          // img.setAttribute('src','https://pcfy.redberryinternship.ge/api/laptop'+item.laptop.image + ''); // problem
-          // img.setAttribute('alt','laptop image'); // problem
-          // imageCont.appendChild(img);
-          //text side
+          itm.appendChild(imageCont); // image
+
+          var img = document.createElement('img');
+          img.setAttribute('src', 'https://pcfy.redberryinternship.ge/api/laptop' + item.laptop.image + ''); // problem
+
+          img.setAttribute('alt', 'laptop image'); // problem
+
+          imageCont.appendChild(img); //text side
 
           var infoSide = document.createElement('div');
           infoSide.setAttribute('class', 'info-side');
@@ -141,11 +143,11 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           laptop.innerHTML = item.laptop.name;
           infoSide.appendChild(laptop); //see more
 
-          var more = document.createElement('span'); //problem
-
-          more.innerHTML = "მეტის ნახვა";
+          var more = document.createElement('a');
+          more.setAttribute('href', 'laptop-info.html');
           more.setAttribute('class', 'see-more');
           more.setAttribute('inner_id', "" + i + "");
+          more.innerHTML = "მეტის ნახვა";
           i++;
           infoSide.appendChild(more);
           parent.appendChild(itm);

@@ -35,11 +35,11 @@
                         let  imageCont= document.createElement('div');
                         imageCont.setAttribute('class','image-container');
                         itm.appendChild(imageCont);
-                        //image
-                        // let img= document.createElement('img');
-                        // img.setAttribute('src','https://pcfy.redberryinternship.ge/api/laptop'+item.laptop.image + ''); // problem
-                        // img.setAttribute('alt','laptop image'); // problem
-                        // imageCont.appendChild(img);
+                        // image
+                        let img= document.createElement('img');
+                        img.setAttribute('src','https://pcfy.redberryinternship.ge/api/laptop'+item.laptop.image + ''); // problem
+                        img.setAttribute('alt','laptop image'); // problem
+                        imageCont.appendChild(img);
 
                         //text side
                         let infoSide= document.createElement('div');
@@ -57,11 +57,11 @@
                         infoSide.appendChild(laptop);
                         //see more
 
-                        let more= document.createElement('span');
-                        //problem
-                        more.innerHTML="მეტის ნახვა";
+                        let more= document.createElement('a');
+                        more.setAttribute('href','laptop-info.html');
                         more.setAttribute('class','see-more');
                         more.setAttribute('inner_id', ""+i+"");
+                        more.innerHTML="მეტის ნახვა";
                         i++;
                         infoSide.appendChild(more);
 
